@@ -4,13 +4,15 @@ import ConnectDB from "./DB/index.js"
 dotenv.config({
     path:"./.env"
 })
-ConnectDB().then(()=>{
-    app.listen(process.env.PORT || PORT,()=>{
-        console.log(`Server is Running on Port ${PORT} 🖥️`)
-    })
-}).catch((error)=>{
-    console.log("Error while Setting up Server ☠️")
+
+
+ConnectDB();
+
+
+app.listen(process.env.PORT || PORT,()=>{
+    console.log(`Server is Running on Port ${PORT} 🖥️`)
 })
+
 
 
 
