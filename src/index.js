@@ -5,15 +5,19 @@ dotenv.config({
     path:"./.env"
 })
 
-
-ConnectDB();
-
-
-app.listen(process.env.PORT || PORT,()=>{
-    console.log(`Server is Running on Port ${PORT} 🖥️`)
-})
-
-
-
-
 const PORT = process.env.PORT || 8000;
+
+
+
+ConnectDB().then(()=>{
+    app.listen(process.env.PORT || PORT,()=>{
+        console.log(`Server is Running on Port ${PORT} 🖥️`)
+    })
+}).catch((err)=>{
+    console.log("MonogDB Connection Error ☠️",err)
+});
+
+
+
+
+
