@@ -1,5 +1,5 @@
-import express from "express"
-import cors from "cors"
+import cors from "cors";
+import express from "express";
 
 
 
@@ -18,10 +18,9 @@ app.use(express.urlencoded({extended:true , limit:"64kb"}))
 app.use(express.static("public"))
 
 // import Routes 
-import healthCheckRouter from "./routes/HealthCheck.route.js"
+import healthCheckRouter from "./routes/HealthCheck.route.js";
 
 // routes
-
 app.use("/api/v1/healthcheck",healthCheckRouter)
 
 
